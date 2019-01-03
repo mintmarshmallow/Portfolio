@@ -6,8 +6,7 @@
   </head>
   <body>
     <div class="subroot">
-        <nav class="tabMenu show-on-scroll">
-          <a href="https://www.naver.com">asdf</a>
+        <nav class="tabMenu show-on-scroll show-on-scroll-minus">
           <h2 class="listTitle">GoTree</h2>
           <div class="property">text</div>
           <div class="property">textasdf</div>
@@ -26,15 +25,15 @@
         </div>
         <div class="App scene2">
           <div class="texts">
-            <h1 class="title">hello</h1>
-            <p class="infoText">
+            <h1 class="title header1">hello</h1>
+            <p class="infoText text1">
               Hello World! Welcome to My PortFolio
             </p>
           </div>
         </div>
         <div class="App scene2">
           <div class="texts">
-            <h1 class="title">hello</h1>
+            <h1 class="title header2">hello</h1>
             <p class="infoText">
               Hello World! Welcome to My PortFolio
             </p>
@@ -47,6 +46,8 @@
           window.addEventListener('scroll', () => {
             const el = document.querySelector('.show-on-scroll');
             const info = document.querySelector('.scene1');
+
+
             if(window.scrollY >= window.innerHeight){
                el.classList.add('shown');
             }
@@ -60,6 +61,29 @@
             }
           })
         }
+        //위로 스크롤할때만 탭메뉴 생기는 기능 추가한 버전
+        /*window.onload = function() {
+          var prevY= window.scrollY;
+          window.addEventListener('scroll', () => {
+            console.log(prevY)
+            const el = document.querySelector('.show-on-scroll');
+            const info = document.querySelector('.scene1');
+
+
+            if(window.scrollY >= window.innerHeight && window.scrollY < prevY){
+               el.classList.add('shown');
+            }
+            else {
+              el.classList.remove('shown');
+            }
+            if(window.scrollY >= window.innerHeight/5){
+              info.classList.add('isblured');
+            } else {
+              info.classList.remove('isblured');
+            }
+            prevY = window.scrollY;
+          })
+        }*/
       </script>
   </body>
 </html>
